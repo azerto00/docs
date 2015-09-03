@@ -298,7 +298,7 @@ table à ``select()``::
     // Sélectionne seulement id et title de la table articles
     $query = $articlesTable->find();
     $query
-        ->select(['slug' => $query->func()->concat(['title', '-', 'id'])])
+        ->select(['slug' => $query->func()->concat(['title' => "literal", '-', 'id' => "literal"])])
         ->select($articlesTable); // Sélectionne tous les champs de articles
 
 .. _using-sql-functions:
